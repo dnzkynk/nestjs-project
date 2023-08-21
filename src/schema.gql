@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cat {
+  name: String!
+  family: String!
+  age: Float
+}
+
+type Student {
+  name: String!
+  lastname: String!
+  lesson: [String!]!
+}
+
+type Query {
+  cats: Cat!
+  title: String!
+  studentsList: [Student!]!
+  studentLessons(studentId: String!): [String!]!
+}
+
+type Mutation {
+  createStudent(input: StudentDTO!): Student!
+  addLessonToStudent(id: String!, lesson: String!): Student!
+  deleteAllStudents: Boolean!
+  deleteStudent(id: String!): Boolean!
+  deleteAllLessonsFromStudent(id: String!): Boolean!
+}
+
+input StudentDTO {
+  name: String!
+  lastname: String!
+  lesson: [String!]!
+}
